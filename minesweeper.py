@@ -26,7 +26,7 @@ class MineSweeper:
         for i in range(size_of_matrix):
             x, y = divmod(i, self.width)
 
-            if self.matrix[x][y] != -1:
+            if self.matrix[x][y] != self.BOMB:
                 self.matrix[x][y] = self._num_of_bomb_near_right_here(x, y)
 
     def print_map(self):
@@ -48,7 +48,7 @@ class MineSweeper:
 
         cnt = 0
         for element in adjacent_elements:
-            if self.matrix[element[0]][element[1]] == -1:
+            if self.matrix[element[0]][element[1]] == self.BOMB:
                 cnt += 1
 
         return cnt
