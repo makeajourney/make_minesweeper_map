@@ -16,8 +16,8 @@ class MineSweeper:
     def set_bomb_randomly(self, num_of_bomb=10):
         positions = np.random.choice(self.width * self.height, num_of_bomb, replace=False)
 
-        for bomb in positions:
-            x, y = divmod(bomb, self.width)
+        for position in positions:
+            x, y = divmod(position, self.width)
             self.matrix[x][y] = self.BOMB
 
     def calculate_map(self):
