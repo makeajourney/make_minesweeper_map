@@ -47,8 +47,8 @@ class MineSweeper:
         adjacent_elements = list(filter(_filter, adjacent_elements))
 
         cnt = 0
-        for element in adjacent_elements:
-            if self.matrix[element[0]][element[1]] == self.BOMB:
+        for element_x, element_y in adjacent_elements:
+            if self.matrix[element_x][element_y] == self.BOMB:
                 cnt += 1
 
         return cnt
